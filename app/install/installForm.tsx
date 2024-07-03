@@ -80,7 +80,7 @@ const InstallForm = () => {
     loading
       ? <Loading />
       : <>
-        <div className="justify-center">
+        <div className="justify-center flex flex-col items-center w-full grow x-6 md:px-[108px]">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">
             <h2 className="text-[32px] font-bold text-gray-900">{t('login.setAdminAccount')}</h2>
             <p className='
