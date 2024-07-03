@@ -1,0 +1,17 @@
+.inputWrap {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #F4F5F6;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  display: none;
+  display: flex;
+}
+
+.inputWrap:hover .deleteBtn {
+  display: flex;
+}

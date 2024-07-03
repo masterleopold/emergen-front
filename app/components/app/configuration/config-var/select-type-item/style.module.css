@@ -1,0 +1,38 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 68px;
+  padding-top: 0.25rem;
+  width: 98px;
+  border-radius: 8px;
+  border: 1px solid #F4F5F6;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.item:not(.selected):hover {
+  border-color: #D9C7FA;
+  background-color: #F8F4FE;
+}
+
+.item.selected {
+  color: #7C3AED;
+  border-color: #A679F3;
+  background-color: #F8F4FE;
+}
+
+.text {
+  font-size: 13px;
+  color: #707B84;
+  font-weight: 500;
+}
+
+.item.selected .text {
+  color: #7C3AED;
+}
+
+.item:not(.selected):hover {
+  color: #474E54;
+}

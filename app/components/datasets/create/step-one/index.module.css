@@ -1,0 +1,151 @@
+.stepHeader {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 42px 64px 12px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #202429;
+}
+
+.form {
+  position: relative;
+  padding: 12px 64px;
+}
+
+.dataSourceItem {
+  @apply box-border relative shrink-0 flex items-center mr-3 p-3 h-14 bg-white rounded-xl cursor-pointer;
+  border: 0.5px solid #E5E8E9;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #202429;
+}
+.dataSourceItem:hover {
+  background-color: #F8F4FE;
+  border: 0.5px solid #D9C7FA;
+}
+.dataSourceItem.active {
+  background-color: #F8F4FE;
+  border: 1.5px solid #A679F3;
+}
+.dataSourceItem.disabled {
+  background-color: #f9fafb;
+  border: 0.5px solid #E5E8E9;
+  cursor: default;
+}
+.dataSourceItem.disabled:hover {
+  background-color: #f9fafb;
+  border: 0.5px solid #E5E8E9;
+}
+.comingTag {
+  @apply flex justify-center items-center bg-white;
+  position: absolute;
+  right: 8px;
+  top: -10px;
+  padding: 1px 6px;
+  height: 20px;
+  border: 1px solid #F8F4FE;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #681CEA;
+}
+.datasetIcon {
+  @apply flex mr-2 w-8 h-8 rounded-lg bg-center bg-no-repeat;
+  background-color: #FCFDFE;
+  background-image: url(../assets/file.svg);
+  background-size: 16px;
+  border: 0.5px solid #D9C7FA;
+}
+.dataSourceItem:active .datasetIcon,
+.dataSourceItem:hover .datasetIcon {
+  background-color: #F8F4FE;
+  border: 0.5px solid #F8F4FE;
+}
+.datasetIcon.notion {
+  background-image: url(../assets/notion.svg);
+  background-size: 20px;
+}
+.datasetIcon.web {
+  background-image: url(../assets/web.svg);
+}
+
+.submitButton {
+  width: 120px;
+}
+
+.dividerLine {
+  margin: 32px 0;
+  max-width: 640px;
+  height: 1px;
+  background-color: #eaecf0;
+}
+
+.OtherCreationOption {
+  @apply flex items-center cursor-pointer;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #7C3AED;
+}
+.OtherCreationOption::before {
+  content: '';
+  display: block;
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  background: center no-repeat url(../assets/folder-plus.svg);
+  background-size: contain;
+}
+
+.notionConnectionTip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  max-width: 640px;
+  background: #F4F5F6;
+  border-radius: 16px;
+}
+
+.notionIcon {
+  display: flex;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  background: #fff center no-repeat url(../assets/notion.svg);
+  background-size: 24px;
+  border: 0.5px solid #EAECF5;
+  border-radius: 12px;
+}
+
+.notionConnectionTip .title {
+  position: relative;
+  margin: 24px 0 4px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #374151;
+}
+.notionConnectionTip .title::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: -12px;
+  width: 16px;
+  height: 16px;
+  background: center no-repeat url(../assets/Icon-3-dots.svg);
+  background-size: contain;
+}
+.notionConnectionTip .tip {
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #6B7280;
+}

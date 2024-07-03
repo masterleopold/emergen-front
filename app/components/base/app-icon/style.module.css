@@ -1,0 +1,42 @@
+.appIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 2.25rem; /* w-9 */
+  height: 2.25rem; /* h-9 */
+  font-size: 1.125rem; /* text-lg */
+  background-color: #F8F4FE; /* bg-primary-50 */
+  border-radius: 0.5rem; /* rounded-lg */
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.large {
+  width: 2.5rem; /* w-10 */
+  height: 2.5rem; /* h-10 */
+}
+
+.medium {
+  width: 2rem; /* w-8 */
+  height: 2rem; /* h-8 */
+}
+
+.small {
+  width: 1.5rem; /* w-6 */
+  height: 1.5rem; /* h-6 */
+}
+
+.tiny {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+}
+
+.xs {
+  width: 0.75rem; /* w-3 */
+  height: 0.75rem; /* h-3 */
+}
+
+.rounded {
+  border-radius: 50%; /* rounded-full */
+}

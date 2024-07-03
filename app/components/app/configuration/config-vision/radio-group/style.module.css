@@ -1,0 +1,22 @@
+.item {
+  @apply grow flex items-center h-8 px-2.5 rounded-lg bg-gray-25 border-[0.5px] border-gray-300 cursor-pointer space-x-2;
+}
+
+.item:hover {
+  background-color: #ffffff;
+  border-color: #D9C7FA;
+}
+
+.item.checked {
+  background-color: #ffffff;
+  border-color: #A679F3;
+}
+
+.radio {
+  @apply w-4 h-4 border-[2px] border-gray-300 rounded-full; 
+}
+
+.item.checked .radio {
+  border-width: 5px;
+  border-color: #7C3AED;
+}

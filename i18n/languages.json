@@ -1,0 +1,18 @@
+{
+  "languages": [
+    {
+      "value": "en-US",
+      "name": "English",
+      "prompt_name": "English",
+      "example": "Hello, Emergen!",
+      "supported": true
+    },
+    {
+      "value": "ja-JP",
+      "name": "日本語",
+      "prompt_name": "Japanese",
+      "example": "こんにちは、Emergen!",
+      "supported": true
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+.installedApp {
+  height: 100%;
+}
+
+.starIcon {
+  width: 16px;
+  height: 16px;
+  background: url(./icons/star.svg) center center no-repeat;
+  background-size: contain;
+}

@@ -1,0 +1,7 @@
+/* .item:hover, */
+.item.active {
+  border-radius: 8px;
+  background: #F8F4FE;
+  color: #681CEA;
+  font-weight: 500;
+}
