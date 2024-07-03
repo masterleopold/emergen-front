@@ -80,70 +80,72 @@ const InstallForm = () => {
     loading
       ? <Loading />
       : <>
-        <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <h2 className="text-[32px] font-bold text-gray-900">{t('login.setAdminAccount')}</h2>
-          <p className='
-          mt-1 text-sm text-gray-600
-        '>{t('login.setAdminAccountDesc')}</p>
-        </div>
-        <div className="grow mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="bg-white ">
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className='mb-5'>
-                <label htmlFor="email" className="my-2 flex items-center justify-between text-sm font-medium text-gray-900">
-                  {t('login.email')}
-                </label>
-                <div className="mt-1">
-                  <input
-                    {...register('email')}
-                    placeholder={t('login.emailPlaceholder') || ''}
-                    className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-3 border-[0.5px] bg-white border-gray-400 hover:border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-500 caret-primary-600 sm:text-sm'}
-                  />
-                  {errors.email && <span className='text-red-400 text-sm'>{t(`${errors.email?.message}`)}</span>}
+        <div className="justify-center">
+          <div className="sm:mx-auto sm:w-full sm:max-w-md">
+            <h2 className="text-[32px] font-bold text-gray-900">{t('login.setAdminAccount')}</h2>
+            <p className='
+            mt-1 text-sm text-gray-600
+          '>{t('login.setAdminAccountDesc')}</p>
+          </div>
+          <div className="grow mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+            <div className="bg-white ">
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className='mb-5'>
+                  <label htmlFor="email" className="my-2 flex items-center justify-between text-sm font-medium text-gray-900">
+                    {t('login.email')}
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      {...register('email')}
+                      placeholder={t('login.emailPlaceholder') || ''}
+                      className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-3  bg-gray-200 hover:border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-500 caret-primary-600 sm:text-sm'}
+                    />
+                    {errors.email && <span className='text-red-400 text-sm'>{t(`${errors.email?.message}`)}</span>}
+                  </div>
+  
                 </div>
-
-              </div>
-
-              <div className='mb-5'>
-                <label htmlFor="name" className="my-2 flex items-center justify-between text-sm font-medium text-gray-900">
-                  {t('login.name')}
-                </label>
-                <div className="mt-1 relative rounded-md">
-                  <input
-                    {...register('name')}
-                    placeholder={t('login.namePlaceholder') || ''}
-                    className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-3 border-[0.5px] bg-white border-gray-400 hover:border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-500 caret-primary-600 sm:text-sm pr-10'}
-                  />
+  
+                <div className='mb-5'>
+                  <label htmlFor="name" className="my-2 flex items-center justify-between text-sm font-medium text-gray-900">
+                    {t('login.name')}
+                  </label>
+                  <div className="mt-1 relative rounded-md">
+                    <input
+                      {...register('name')}
+                      placeholder={t('login.namePlaceholder') || ''}
+                      className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-3 bg-gray-200 hover:border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-500 caret-primary-600 sm:text-sm pr-10'}
+                    />
+                  </div>
+                  {errors.name && <span className='text-red-400 text-sm'>{t(`${errors.name.message}`)}</span>}
                 </div>
-                {errors.name && <span className='text-red-400 text-sm'>{t(`${errors.name.message}`)}</span>}
-              </div>
-
-              <div className='mb-5'>
-                <label htmlFor="password" className="my-2 flex items-center justify-between text-sm font-medium text-gray-900">
-                  {t('login.password')}
-                </label>
-                <div className="mt-1 relative rounded-md">
-                  <input
-                    {...register('password')}
-                    type='password'
-                    placeholder={t('login.passwordPlaceholder') || ''}
-                    className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-3 border-[0.5px] bg-white border-gray-400 hover:border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-500 caret-primary-600 sm:text-sm pr-10'}
-                  />
-
-                 
+  
+                <div className='mb-5'>
+                  <label htmlFor="password" className="my-2 flex items-center justify-between text-sm font-medium text-gray-900">
+                    {t('login.password')}
+                  </label>
+                  <div className="mt-1 relative rounded-md">
+                    <input
+                      {...register('password')}
+                      type='password'
+                      placeholder={t('login.passwordPlaceholder') || ''}
+                      className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-3 bg-gray-200 hover:border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-500 caret-primary-600 sm:text-sm pr-10'}
+                    />
+  
+                   
+                  </div>
+  
+                  <div className={classNames('mt-2 text-xs text-gray-500', {
+                    'text-red-400 !text-sm': errors.password,
+                  })}>{t('login.error.passwordInvalid')}</div>
                 </div>
-
-                <div className={classNames('mt-2 text-xs text-gray-500', {
-                  'text-red-400 !text-sm': errors.password,
-                })}>{t('login.error.passwordInvalid')}</div>
-              </div>
-
-              <div>
-                <Button variant='primary' className='w-full' onClick={handleSetting}>
-                  {t('login.installBtn')}
-                </Button>
-              </div>
-            </form>
+  
+                <div>
+                  <Button variant='primary' className='w-full' onClick={handleSetting}>
+                    {t('login.installBtn')}
+                  </Button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </>
