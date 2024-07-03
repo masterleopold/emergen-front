@@ -87,7 +87,7 @@ const InstallForm = () => {
             mt-1 text-sm text-gray-600
           '>{t('login.setAdminAccountDesc')}</p>
           </div>
-          <div className="grow mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <div className="bg-white ">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='mb-5'>

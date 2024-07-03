@@ -54,7 +54,7 @@ const InitPasswordPopup = () => {
         {!validated && (
           <div className="block mx-12 min-w-28">
             <div className="mb-4">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-25">
                 {t('login.adminInitPassword')}
 
               </label>
