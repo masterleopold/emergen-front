@@ -180,7 +180,7 @@ export default function AccountSetting({
                           key={item.key}
                           className={`
                             flex items-center h-[37px] mb-[2px] text-sm cursor-pointer rounded-lg
-                            ${activeMenu === item.key ? 'font-semibold text-primary-600 bg-primary-50' : 'font-light text-gray-700'}
+                            ${activeMenu === item.key ? 'font-semibold text-primary-600 bg-primary-50' : 'font-normal text-gray-700'}
                           `}
                           title={item.name}
                           onClick={() => setActiveMenu(item.key)}

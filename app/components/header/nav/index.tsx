@@ -68,7 +68,7 @@ const Nav = ({
       {
         curNav && isActived && (
           <>
-            <div className='font-light text-gray-300 '>/</div>
+            <div className='font-normal text-gray-300 '>/</div>
             <NavSelector
               isApp={isApp}
               curNav={curNav}

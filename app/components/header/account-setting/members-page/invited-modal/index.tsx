@@ -29,11 +29,10 @@ const InvitedModal = ({
   return (
     <div className={s.wrap}>
       <Modal isShow onClose={() => {}} className={s.modal}>
-        <div className='flex justify-between mb-3'>
+        <div className='flex justify-between mb-5'>
           <div className='
             w-12 h-12 flex items-center justify-center rounded-xl
             bg-white border-[0.5px] border-gray-100
-            shadow-xl
           '>
             <CheckCircleIcon className='w-[22px] h-[22px] text-[#039855]' />
           </div>

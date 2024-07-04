@@ -92,7 +92,7 @@ const Operation = ({
                 className={cn(
                   `
                       absolute right-0 top-[52px] z-10 bg-white border-[0.5px] border-gray-300
-                      divide-y divide-gray-100 origin-top-right rounded-lg
+                      divide-y divide-gray-100 origin-top-right rounded-lg font-normal
                     `,
                   s.popup,
                 )}
