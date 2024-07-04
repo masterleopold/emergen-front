@@ -37,7 +37,7 @@ const Question: FC<QuestionProps> = ({
          style={theme ? { color: theme.chatBubbleColor } : {}}
         />
         <div
-         className='px-4 py-3 bg-primary-600 rounded-b-2xl rounded-tl-2xl text-sm text-gray-25'
+         className='px-4 py-4 bg-primary-600 rounded-b-2xl rounded-tl-2xl text-sm text-gray-25'
          style={theme?.chatBubbleColorStyle ? CssTransform(theme.chatBubbleColorStyle) : {}}
         >
           {
