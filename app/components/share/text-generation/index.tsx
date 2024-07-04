@@ -535,7 +535,7 @@ const TextGeneration: FC<IMainProps> = ({
         <div className={cn(
           isPC ? 'w-[600px] max-w-[50%] p-8' : 'p-4',
           isInstalledApp && '',
-          'shrink-0 relative flex flex-col pb-10 h-full bg-white',
+          'shrink-0 relative flex flex-col pb-10 h-full bg-white border-x-[0.5px] border-x-gray-300',
         )}>
           <div className='mb-6'>
             <div className='flex items-center justify-between'>
@@ -617,7 +617,7 @@ const TextGeneration: FC<IMainProps> = ({
             isInstalledApp ? 'left-[248px]' : 'left-4 sm:left-8',
             'fixed bottom-4 sm:bottom-6 flex space-x-2 text-gray-400 font-normal text-xs',
           )}>
-            <div className="">© {siteInfo.copyright || siteInfo.title} {(new Date()).getFullYear()}</div>
+            <div className="">© {siteInfo.copyright || siteInfo.title}</div>
             {siteInfo.privacy_policy && (
               <>
                 <div>·</div>

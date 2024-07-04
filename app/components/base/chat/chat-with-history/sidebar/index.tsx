@@ -112,8 +112,8 @@ const Sidebar = () => {
           )
         }
       </div>
-      <div className='px-5 pb-5'>
-        <LogoSite className='block w-auto h-7 !h-6 opacity-25' />
+      <div className='px-5 pb-5 text-xs text-gray-400'>
+        © {appData?.site.copyright || appData?.site.title}
       </div>
       {!!showConfirm && (
         <Confirm
