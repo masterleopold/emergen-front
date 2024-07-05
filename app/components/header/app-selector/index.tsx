@@ -57,7 +57,7 @@ export default function AppSelector({ appItems, curApp }: IAppSelectorProps) {
             className="
               absolute -left-11 right-0 mt-1.5 w-60 max-w-80
               divide-y divide-gray-100 origin-top-right rounded-xl bg-white
-              shadow-xl
+              shadow-xl focus-visible:outline-none
             "
           >
             {!!appItems.length && (<div className="px-1 py-1 overflow-auto" style={{ maxHeight: '50vh' }}>
