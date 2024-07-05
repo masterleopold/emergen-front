@@ -6,7 +6,7 @@ export const THEME_MAP: Record<string, { outer: string; title: string; bg: strin
   [NoteTheme.blue]: {
     outer: '#2E90FA',
     title: '#D1E9FF',
-    bg: '#F8F4FE',
+    bg: '#EFF8FF',
     border: '#84CAFF',
   },
   [NoteTheme.cyan]: {
