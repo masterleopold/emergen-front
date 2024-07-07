@@ -141,7 +141,7 @@ const DatasetCard = ({
         </div>
         <div
           className={cn(
-            'grow mb-2 px-[14px] max-h-[72px] text-xs leading-normal text-gray-500 group-hover:line-clamp-2',
+            'grow mb-2 px-[14px] max-h-[72px] text-xs leading-normal text-gray-500 group-hover:line-clamp-2' ,
             tags.length ? 'line-clamp-2' : 'line-clamp-4',
             !dataset.embedding_available && 'opacity-50 hover:opacity-100',
           )}
@@ -171,7 +171,7 @@ const DatasetCard = ({
               />
             </div>
           </div>
-          <div className='!hidden group-hover:!flex shrink-0 mx-1 w-[1px] h-[14px] bg-gray-300'/>
+          <div className='!hidden group-hover:!flex shrink-0 mx-1 w-[1px] h-[14px] bg-gray-300' />
           <div className='!hidden group-hover:!flex shrink-0'>
             <CustomPopover
               htmlContent={<Operations />}
