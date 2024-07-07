@@ -27,7 +27,7 @@ const ForgotPassword = () => {
       }>
         <Header />
         {token ? <ChangePasswordForm /> : <ForgotPasswordForm />}
-        <div className='px-8 py-6 text-xs font-normal text-gray-400'>
+        <div className='px-6 py-6 text-xs font-normal text-gray-400'>
           © Vox
         </div>
       </div>
