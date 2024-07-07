@@ -15,20 +15,20 @@ const ForgotPassword = () => {
     <div className={classNames(
       style.background,
       'flex w-full min-h-screen',
-      'p-4 lg:p-8',
+      'sm:p-4 lg:p-8',
       'gap-x-20',
       'justify-center lg:justify-start',
     )}>
       <div className={
         classNames(
-          'flex w-full flex-col bg-white shadow rounded-2xl shrink-0',
-          'md:w-[608px] space-between',
+          'flex w-full flex-col bg-white sm:rounded-2xl shrink-0',
+          'justify-between',
         )
       }>
         <Header />
         {token ? <ChangePasswordForm /> : <ForgotPasswordForm />}
-        <div className='px-8 py-6 text-sm font-normal text-gray-500'>
-          © {new Date().getFullYear()} Dify, Inc. All rights reserved.
+        <div className='px-8 py-6 text-xs font-normal text-gray-400'>
+          © Vox
         </div>
       </div>
     </div>
