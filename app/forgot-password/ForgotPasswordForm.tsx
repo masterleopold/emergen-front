@@ -89,7 +89,7 @@ const ForgotPasswordForm = () => {
               {isEmailSent ? t('login.checkEmailForResetLink') : t('login.forgotPasswordDesc')}
             </p>
           </div>
-          <div className="grow mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <div className="bg-white ">
               <form>
                 {!isEmailSent && (
