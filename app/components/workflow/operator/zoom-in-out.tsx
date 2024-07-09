@@ -256,7 +256,7 @@ const ZoomInOut: FC = () => {
         </div>
       </PortalToFollowElemTrigger>
       <PortalToFollowElemContent className='z-10'>
-        <div className='w-[145px] rounded-lg border-[0.5px] border-gray-300 bg-white shadow-lg'>
+        <div className='w-[145px] rounded-lg border-[0.5px] border-gray-300 bg-white shadow-lg focus-visible:outline-none'>
           {
             ZOOM_IN_OUT_OPTIONS.map((options, i) => (
               <Fragment key={i}>

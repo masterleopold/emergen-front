@@ -57,7 +57,7 @@ const Dropdown: FC<DropdownProps> = ({
         }
       </PortalToFollowElemTrigger>
       <PortalToFollowElemContent className={popupClassName}>
-        <div className='rounded-lg border-[0.5px] border-gray-300 bg-white shadow-lg text-sm text-gray-700'>
+        <div className='rounded-lg border-[0.5px] border-gray-300 bg-white shadow-lg text-sm text-gray-700 focus-visible:outline-none'>
           {
             !!items.length && (
               <div className='p-1'>

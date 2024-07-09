@@ -110,7 +110,7 @@ const NodeSelector: FC<NodeSelectorProps> = ({
         }
       </PortalToFollowElemTrigger>
       <PortalToFollowElemContent className='z-[1000]'>
-        <div className={`rounded-lg border-[0.5px] border-gray-300 bg-white shadow-lg ${popupClassName}`}>
+        <div className={`rounded-lg border-[0.5px] border-gray-300 bg-white shadow-lg focus-visible:outline-none ${popupClassName}`}>
           <div className='px-2 pt-2'>
             <div
               className='flex items-center px-2 rounded-lg bg-gray-100'

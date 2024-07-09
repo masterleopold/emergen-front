@@ -99,7 +99,7 @@ const BlockIcon: FC<BlockIconProps> = ({
                 )
                 : (
                   <AppIcon
-                    className='shrink-0 !w-full !h-full'
+                    className='shrink-0 !w-full !h-full !text-primary-600 !bg-transparent'
                     size='tiny'
                     icon={toolIcon?.content}
                     background={toolIcon?.background}

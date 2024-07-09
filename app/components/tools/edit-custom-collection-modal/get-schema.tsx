@@ -66,7 +66,7 @@ const GetSchema: FC<Props> = ({
           <div className='text-xs font-medium text-gray-700'>{t('tools.createTool.importFromUrl')}</div>
         </Button>
         {showImportFromUrl && (
-          <div className=' absolute left-[-35px] top-[26px] p-2 rounded-lg border-[0.5px] border-gray-300 bg-white shadow-lg'>
+          <div className=' absolute left-[-35px] top-[26px] p-2 rounded-lg border-[0.5px] border-gray-300 bg-white shadow-lg focus-visible:outline-none'>
             <div className='relative'>
               <input
                 type='text'
