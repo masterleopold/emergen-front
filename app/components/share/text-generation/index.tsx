@@ -470,7 +470,7 @@ const TextGeneration: FC<IMainProps> = ({
       }
     >
       <>
-        <div className='flex items-center justify-between shrink-0'>
+        <div className='flex items-center justify-between shrink-0 pb-4'>
           <div className='flex items-center space-x-3'>
             <div className={s.starIcon}></div>
             <div className='text-lg font-semibold text-gray-800'>{t('share.generation.title')}</div>

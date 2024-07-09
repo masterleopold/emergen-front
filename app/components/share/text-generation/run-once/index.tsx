@@ -61,7 +61,7 @@ const RunOnce: FC<IRunOnceProps> = ({
                 {item.type === 'string' && (
                   <input
                     type="text"
-                    className="block w-full p-2 text-gray-900 border-[0.5px] border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-primary-500 focus:border-primary-500 "
+                    className="block w-full p-2 text-gray-900 border-[0.5px] border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-primary-500 focus:border-primary-500 focus-visible:outline-none "
                     placeholder={`${item.name}${!item.required ? `(${t('appDebug.variableTable.optional')})` : ''}`}
                     value={inputs[item.key]}
                     onChange={(e) => { onInputsChange({ ...inputs, [item.key]: e.target.value }) }}
@@ -85,7 +85,7 @@ const RunOnce: FC<IRunOnceProps> = ({
                 {item.type === 'number' && (
                   <input
                     type="number"
-                    className="block w-full p-2 text-gray-900 border-[0.5px] border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-primary-500 focus:border-primary-500 "
+                    className="block w-full p-2 text-gray-900 border-[0.5px] border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-primary-500 focus:border-primary-500 focus-visible:outline-none"
                     placeholder={`${item.name}${!item.required ? `(${t('appDebug.variableTable.optional')})` : ''}`}
                     value={inputs[item.key]}
                     onChange={(e) => { onInputsChange({ ...inputs, [item.key]: e.target.value }) }}
