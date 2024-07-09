@@ -83,7 +83,7 @@ const PanelOperatorPopup = ({
   const link = useNodeHelpLink(data.type)
 
   return (
-    <div className='w-[240px] border-[0.5px] border-gray-300 rounded-xl shadow-2xl bg-white'>
+    <div className='w-[240px] border-[0.5px] border-gray-300 rounded-xl shadow-2xl bg-white focus-visible:outline-none'>
       {
         (showChangeBlock || canRunBySingle(data.type)) && (
           <>
@@ -184,9 +184,11 @@ const PanelOperatorPopup = ({
             {t('workflow.panel.about').toLocaleUpperCase()}
           </div>
           <div className='mb-1 text-gray-700 leading-[18px]'>{about}</div>
+          /*
           <div className='leading-[18px]'>
             {t('workflow.panel.createdBy')} {author}
           </div>
+          */
         </div>
       </div>
     </div>

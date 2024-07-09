@@ -66,7 +66,7 @@ export const DescriptionInput = memo(({
       className={`
         group flex px-2 py-[5px] max-h-[60px] rounded-lg overflow-y-auto
         border-[0.5px] border-transparent hover:bg-gray-50 leading-0
-        ${focus && '!border-gray-300 shadow-xs !bg-gray-50'}
+        ${focus && '!border-gray-300 !bg-gray-50'}
       `}
     >
       <Textarea
