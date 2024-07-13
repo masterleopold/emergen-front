@@ -98,23 +98,16 @@ export const getMaxToken = (modelId: string) => {
 export const LOCALE_COOKIE_NAME = 'locale'
 
 export const DEFAULT_VALUE_MAX_LEN = 48
-export const DEFAULT_PARAGRAPH_VALUE_MAX_LEN = 1000
+export const DEFAULT_PARAGRAPH_VALUE_MAX_LEN = 100000
 
-export const zhRegex = /^[\u4E00-\u9FA5]$/m
 export const emojiRegex = /^[\uD800-\uDBFF][\uDC00-\uDFFF]$/m
 export const emailRegex = /^[\w.!#$%&'*+\-/=?^{|}~]+@([\w-]+\.)+[\w-]{2,}$/m
-const MAX_ZN_VAR_NAME_LENGHT = 8
 const MAX_EN_VAR_VALUE_LENGHT = 30
-export const getMaxVarNameLength = (value: string) => {
-  if (zhRegex.test(value))
-    return MAX_ZN_VAR_NAME_LENGHT
-
-  return MAX_EN_VAR_VALUE_LENGHT
-}
+export const getMaxVarNameLength = MAX_EN_VAR_VALUE_LENGHT
 
 export const MAX_VAR_KEY_LENGHT = 30
 
-export const MAX_PROMPT_MESSAGE_LENGTH = 10
+export const MAX_PROMPT_MESSAGE_LENGTH = 1000
 
 export const VAR_ITEM_TEMPLATE = {
   key: '',
@@ -133,7 +126,7 @@ export const VAR_ITEM_TEMPLATE_IN_WORKFLOW = {
   options: [],
 }
 
-export const appDefaultIconBackground = '#D5F5F6'
+export const appDefaultIconBackground = '#F8F4FE'
 
 export const NEED_REFRESH_APP_LIST_KEY = 'needRefreshAppList'
 
@@ -148,7 +141,7 @@ export const ANNOTATION_DEFAULT = {
   score_threshold: 0.9,
 }
 
-export const MAX_TOOLS_NUM = 10
+export const MAX_TOOLS_NUM = 100
 
 export const DEFAULT_AGENT_SETTING = {
   enabled: false,
