@@ -149,7 +149,6 @@ import {
      >
        <div className='leading-[18px] text-xs font-normal text-text-tertiary'>{t(`${i18nPrefix}.elseDescription`)}</div>
      </Field>
-      </div>
     </div>
   )
 }
