@@ -167,7 +167,7 @@ const ConfigModal: FC<IConfigModalProps> = ({
 
           {isStringInput && (
             <Field title={t('appDebug.variableConig.maxLength')}>
-              <ConfigString maxLength={type === InputVarType.textInput ? TEXT_MAX_LENGTH : PARAGRAPH_MAX_LENGTH} modelId={modelConfig.model_id} value={max_length} onChange={handlePayloadChange('max_length')} />
+              <ConfigString maxLength={type === InputVarType.textInput ? TEXT_MAX_LENGTH : Infinity} modelId={modelConfig.model_id} value={max_length} onChange={handlePayloadChange('max_length')} />
             </Field>
 
           )}
