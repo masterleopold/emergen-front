@@ -35,20 +35,25 @@ const ProviderCard: FC<ProviderCardProps> = ({
 
   return (
     <div
-      className='group relative flex flex-col justify-between p-4 h-[158px] border-[0.5px] border-gray-300 rounded-2xl'
+      className='group relative flex flex-col px-4 py-3 h-[148px] border-[0.5px] border-black/5 rounded-2xl'
       style={{ background: provider.background || DEFAULT_BACKGROUND_COLOR }}
     >
-      <div>
+      <div className='grow h-0'>
         <div className='py-0.5'>
           <ProviderIcon provider={provider} />
         </div>
         {
           provider.description && (
-            <div className='mt-3 leading-4 text-xs text-black/[48]'>{provider.description[language] || provider.description.en_US}</div>
+            <div
+               className='mt-1 leading-4 text-xs text-black/[48] line-clamp-4'
+               title={provider.description[language] || provider.description.en_US}
+             >
+               {provider.description[language] || provider.description.en_US}
+             </div>
           )
         }
       </div>
-      <div>
+      <div className='shrink-0'>
         <div className={'flex flex-wrap group-hover:hidden gap-0.5'}>
           {
             provider.supported_model_types.map(modelType => (
