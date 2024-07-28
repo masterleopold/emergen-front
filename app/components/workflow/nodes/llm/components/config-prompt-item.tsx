@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next'
 import { RiQuestionLine } from '@remixicon/react'
 import type { ModelConfig, PromptItem, Variable } from '../../../types'
 import { EditionType } from '../../../types'
-import Editor from '@/app/components/workflow/nodes/_base/components/prompt/editor'
 import { useWorkflowStore } from '../../../store'
+import Editor from '@/app/components/workflow/nodes/_base/components/prompt/editor'
 import TypeSelector from '@/app/components/workflow/nodes/_base/components/selector'
 import TooltipPlus from '@/app/components/base/tooltip-plus'
 import { PromptRole } from '@/models/debug'
@@ -79,7 +79,6 @@ const ConfigPromptItem: FC<Props> = ({
   varList,
   handleAddVariable,
   modelConfig,
-  }) => {
 }) => {
   const { t } = useTranslation()
   const workflowStore = useWorkflowStore()
@@ -90,7 +89,7 @@ const ConfigPromptItem: FC<Props> = ({
   useEffect(() => {
     setInstanceId(`${id}-${uniqueId()}`)
   }, [id])
-  
+
   const handleGenerated = useCallback((prompt: string) => {
     onPromptChange(prompt)
     setTimeout(() => setControlPromptEditorRerenderKey(Date.now()))

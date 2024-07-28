@@ -51,7 +51,7 @@ const translation = {
       title: 'Experience enhance',
     },
     conversationOpener: {
-      title: 'Conversation remakers',
+      title: 'Conversation Opener',
       description: 'In a chat app, the first sentence that the AI actively speaks to the user is usually used as a welcome.',
     },
     suggestedQuestionsAfterAnswer: {
@@ -201,7 +201,7 @@ const translation = {
   },
   generate: {
     title: 'Prompt Generator',
-    description: 'The prompt generator can convert input task instructions into high-quality, structured prompts. Please write clear and specific instructions as much detail as possible. The quality of the generated prompts depends on the inference model you choose.',
+    description: 'The Prompt Generator uses the configured model to optimize prompts for higher quality and better structure. Please write clear and detailed instructions.',
     tryIt: 'Try it',
     instruction: 'Instructions',
     instructionPlaceHolder: 'Write clear and specific instructions.',

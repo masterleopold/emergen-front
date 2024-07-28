@@ -3,7 +3,6 @@ import type { FC } from 'react'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useBoolean } from 'ahooks'
-import cn from 'classnames'
 import {
   RiQuestionLine,
 } from '@remixicon/react'
@@ -12,6 +11,7 @@ import { useContext } from 'use-context-selector'
 import ConfirmAddVar from './confirm-add-var'
 import s from './style.module.css'
 import PromptEditorHeightResizeWrap from './prompt-editor-height-resize-wrap'
+import cn from '@/utils/classnames'
 import { type PromptVariable } from '@/models/debug'
 import Tooltip from '@/app/components/base/tooltip'
 import type { CompletionParams } from '@/types/app'
@@ -40,6 +40,7 @@ export type ISimplePromptInput = {
   noTitle?: boolean
   gradientBorder?: boolean
   editorHeight?: number
+  noResize?: boolean
 }
 
 const Prompt: FC<ISimplePromptInput> = ({
@@ -51,11 +52,12 @@ const Prompt: FC<ISimplePromptInput> = ({
   noTitle,
   gradientBorder,
   editorHeight: initEditorHeight,
+  noResize,
 }) => {
   const { t } = useTranslation()
   const media = useBreakpoints()
   const isMobile = media === MediaType.mobile
-  
+
   const { eventEmitter } = useEventEmitterContextContext()
   const {
     modelConfig,
@@ -147,39 +149,39 @@ const Prompt: FC<ISimplePromptInput> = ({
   const [editorHeight, setEditorHeight] = useState(minHeight)
 
   return (
-   <div className={cn((!readonly || gradientBorder) ? `${s.gradientBorder}` : 'bg-gray-50', ' relative')}>
-
-      <div className='rounded-xl bg-[#F8F4FE]'>
+    <div className={cn((!readonly || gradientBorder) ? `${s.gradientBorder}` : 'bg-gray-50', ' relative shadow-md')}>
+      <div className='rounded-xl bg-[#EEF4FF]'>
         {!noTitle && (
-        <div className="flex justify-between items-center h-11 px-3">
-          <div className="flex items-center space-x-1">
-            <div className='h2'>{mode !== AppType.completion ? t('appDebug.chatSubTitle') : t('appDebug.completionSubTitle')}</div>
-            {!readonly && (
-              <Tooltip
-                htmlContent={<div className='w-[180px]'>
-                  {t('appDebug.promptTip')}
-                </div>}
-                selector='config-prompt-tooltip'>
-                <RiQuestionLine className='w-[14px] h-[14px] text-indigo-400' />
-              </Tooltip>
-            )}
+          <div className="flex justify-between items-center h-11 pl-3 pr-6">
+            <div className="flex items-center space-x-1">
+              <div className='h2'>{mode !== AppType.completion ? t('appDebug.chatSubTitle') : t('appDebug.completionSubTitle')}</div>
+              {!readonly && (
+                <Tooltip
+                  htmlContent={<div className='w-[180px]'>
+                    {t('appDebug.promptTip')}
+                  </div>}
+                  selector='config-prompt-tooltip'>
+                  <RiQuestionLine className='w-[14px] h-[14px] text-indigo-400' />
+                </Tooltip>
+              )}
+            </div>
+            <div className='flex items-center'>
+              {!isAgent && !readonly && !isMobile && (
+                <AutomaticBtn onClick={showAutomaticTrue} />
+              )}
+            </div>
           </div>
-          <div className='flex items-center'>
-            {!isAgent && !readonly && !isMobile && (
-              <AutomaticBtn onClick={showAutomaticTrue} />
-            )}
-          </div>
-        </div>
         )}
-        
+
         <PromptEditorHeightResizeWrap
-          className='px-4 pt-3 min-h-[228px] bg-white rounded-t-xl text-sm text-gray-700'
+          className='px-4 pt-2 min-h-[228px] bg-white rounded-t-xl text-sm text-gray-700'
           height={editorHeight}
           minHeight={minHeight}
           onHeightChange={setEditorHeight}
+          hideResize={noResize}
           footer={(
-            <div className='pl-4 pb-3 flex bg-white rounded-b-xl'>
-              <div className="h-[18px] leading-[18px] px-1 rounded-md bg-gray-200 text-xs text-gray-500">{promptTemplate.length}</div>
+            <div className='pl-4 pb-2 flex bg-white rounded-b-xl'>
+              <div className="h-[18px] leading-[18px] px-1 rounded-md bg-gray-100 text-xs text-gray-500">{promptTemplate.length}</div>
             </div>
           )}
         >

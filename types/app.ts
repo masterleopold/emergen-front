@@ -2,6 +2,15 @@ import type { AnnotationReplyConfig, ChatPromptConfig, CompletionPromptConfig, D
 import type { CollectionType } from '@/app/components/tools/types'
 import type { LanguagesSupported } from '@/i18n/language'
 import type { Tag } from '@/app/components/base/tag-management/constant'
+import type {
+  RerankingModeEnum,
+  WeightedScoreEnum,
+} from '@/models/datasets'
+
+export enum Theme {
+  light = 'light',
+  dark = 'dark',
+}
 
 export enum ProviderType {
   openai = 'openai',
@@ -180,21 +189,19 @@ export type CompletionParams = {
    */
   frequency_penalty: number
 }
-
 /**
  * Model configuration. The backend type.
  */
- 
 export type Model = {
-   /** LLM provider, e.g., OPENAI */
-   provider: string
-   /** Model name, e.g, gpt-3.5.turbo */
-   name: string
-   mode: ModelModeType
-   /** Default Completion call parameters */
-   completion_params: CompletionParams
- }
- 
+  /** LLM provider, e.g., OPENAI */
+  provider: string
+  /** Model name, e.g, gpt-3.5.turbo */
+  name: string
+  mode: ModelModeType
+  /** Default Completion call parameters */
+  completion_params: CompletionParams
+}
+
 export type ModelConfig = {
   opening_statement: string
   suggested_questions?: string[]
@@ -246,18 +253,18 @@ export type Language = typeof LanguagesSupported[number]
  * Web Application Configuration
  */
 export type SiteConfig = {
-  /** Application URL Identifier: `http://vox.3mergen.com/{access_token}` */
+  /** Application URL Identifier: `http://dify.app/{access_token}` */
   access_token: string
   /** Public Title */
   title: string
   /** Application Description will be shown in the Client  */
   description: string
   /** Define the color in hex for different elements of the chatbot, such as:
-    * The header, the button , etc.
-     */
-   chat_color_theme: string
-   /** Invert the color of the theme set in chat_color_theme */
-   chat_color_theme_inverted: boolean
+   * The header, the button , etc.
+    */
+  chat_color_theme: string
+  /** Invert the color of the theme set in chat_color_theme */
+  chat_color_theme_inverted: boolean
   /** Author */
   author: string
   /** User Support Email Address */
@@ -356,8 +363,8 @@ export enum TransferMethod {
 }
 
 export enum TtsAutoPlay {
- enabled = 'enabled',
- disabled = 'disabled',
+  enabled = 'enabled',
+  disabled = 'disabled',
 }
 
 export const ALLOW_FILE_EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp', 'gif']
@@ -400,4 +407,16 @@ export type RetrievalConfig = {
   top_k: number
   score_threshold_enabled: boolean
   score_threshold: number
+  reranking_mode?: RerankingModeEnum
+  weights?: {
+    weight_type: WeightedScoreEnum
+    vector_setting: {
+      vector_weight: number
+      embedding_provider_name: string
+      embedding_model_name: string
+    }
+    keyword_setting: {
+      keyword_weight: number
+    }
+  }
 }
