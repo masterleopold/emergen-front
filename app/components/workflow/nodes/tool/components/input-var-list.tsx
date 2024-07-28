@@ -3,9 +3,9 @@ import type { FC } from 'react'
 import React, { useCallback, useState } from 'react'
 import produce from 'immer'
 import { useTranslation } from 'react-i18next'
-import cn from 'classnames'
 import type { ToolVarInputs } from '../types'
 import { VarType as VarKindType } from '../types'
+import cn from '@/utils/classnames'
 import type { ValueSelector, Var } from '@/app/components/workflow/types'
 import type { CredentialFormSchema } from '@/app/components/header/account-setting/model-provider-page/declarations'
 import { FormTypeEnum } from '@/app/components/header/account-setting/model-provider-page/declarations'
@@ -40,7 +40,7 @@ const InputVarList: FC<Props> = ({
   const { availableVars, availableNodesWithParent } = useAvailableVarList(nodeId, {
     onlyLeafNodeVar: false,
     filterVar: (varPayload: Var) => {
-      return [VarType.string, VarType.number].includes(varPayload.type)
+      return [VarType.string, VarType.number, VarType.secret].includes(varPayload.type)
     },
   })
   const paramType = (type: string) => {

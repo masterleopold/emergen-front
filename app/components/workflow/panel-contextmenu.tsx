@@ -2,7 +2,6 @@ import {
   memo,
   useRef,
 } from 'react'
-import cn from 'classnames'
 import { useTranslation } from 'react-i18next'
 import { useClickAway } from 'ahooks'
 import ShortcutsName from './shortcuts-name'
@@ -15,9 +14,7 @@ import {
 } from './hooks'
 import AddBlock from './operator/add-block'
 import { useOperator } from './operator/hooks'
-import { exportAppConfig } from '@/service/apps'
-import { useToastContext } from '@/app/components/base/toast'
-import { useStore as useAppStore } from '@/app/components/app/store'
+import cn from '@/utils/classnames'
 
 const PanelContextmenu = () => {
   const { t } = useTranslation()
@@ -29,7 +26,7 @@ const PanelContextmenu = () => {
   const { handlePaneContextmenuCancel } = usePanelInteractions()
   const { handleStartWorkflowRun } = useWorkflowStartRun()
   const { handleAddNote } = useOperator()
-  const { handleExportDSL } = useDSL()
+  const { exportCheck } = useDSL()
 
   useClickAway(() => {
     handlePaneContextmenuCancel()
@@ -38,7 +35,7 @@ const PanelContextmenu = () => {
   const renderTrigger = () => {
     return (
       <div
-        className='flex items-center justify-between px-3 h-8 text-sm text-gray-700 rounded-lg cursor-pointer hover:bg-gray-100'
+        className='flex items-center justify-between px-3 h-8 text-sm text-gray-700 rounded-lg cursor-pointer hover:bg-gray-50'
       >
         {t('workflow.common.addBlock')}
       </div>
@@ -50,7 +47,7 @@ const PanelContextmenu = () => {
 
   return (
     <div
-      className='absolute w-[200px] rounded-lg border-[0.5px] border-gray-300 bg-white shadow-xl z-[9]'
+      className='absolute w-[200px] rounded-lg border-[0.5px] border-gray-200 bg-white shadow-xl z-[9]'
       style={{
         left: panelMenu.left,
         top: panelMenu.top,
@@ -66,7 +63,7 @@ const PanelContextmenu = () => {
           }}
         />
         <div
-          className='flex items-center justify-between px-3 h-8 text-sm text-gray-700 rounded-lg cursor-pointer hover:bg-gray-100'
+          className='flex items-center justify-between px-3 h-8 text-sm text-gray-700 rounded-lg cursor-pointer hover:bg-gray-50'
           onClick={(e) => {
             e.stopPropagation()
             handleAddNote()
@@ -76,7 +73,7 @@ const PanelContextmenu = () => {
           {t('workflow.nodes.note.addNote')}
         </div>
         <div
-          className='flex items-center justify-between px-3 h-8 text-sm text-gray-700 rounded-lg cursor-pointer hover:bg-gray-100'
+          className='flex items-center justify-between px-3 h-8 text-sm text-gray-700 rounded-lg cursor-pointer hover:bg-gray-50'
           onClick={() => {
             handleStartWorkflowRun()
             handlePaneContextmenuCancel()
@@ -107,17 +104,17 @@ const PanelContextmenu = () => {
       <div className='h-[1px] bg-gray-100'></div>
       <div className='p-1'>
         <div
-          className='flex items-center justify-between px-3 h-8 text-sm text-gray-700 rounded-lg cursor-pointer hover:bg-gray-100'
-          onClick={() => handleExportDSL()}
+          className='flex items-center justify-between px-3 h-8 text-sm text-gray-700 rounded-lg cursor-pointer hover:bg-gray-50'
+          onClick={() => exportCheck()}
         >
           {t('app.export')}
         </div>
         <div
-           className='flex items-center justify-between px-3 h-8 text-sm text-gray-700 rounded-lg cursor-pointer hover:bg-gray-50'
-           onClick={() => setShowImportDSLModal(true)}
-         >
-           {t('workflow.common.importDSL')}
-         </div>
+          className='flex items-center justify-between px-3 h-8 text-sm text-gray-700 rounded-lg cursor-pointer hover:bg-gray-50'
+          onClick={() => setShowImportDSLModal(true)}
+        >
+          {t('workflow.common.importDSL')}
+        </div>
       </div>
     </div>
   )

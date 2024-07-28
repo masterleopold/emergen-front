@@ -5,7 +5,6 @@ import {
   // useRef,
   useState,
 } from 'react'
-import cn from 'classnames'
 import {
   RiClipboardLine,
   RiCloseLine,
@@ -27,14 +26,11 @@ import { SimpleBtn } from '../../app/text-generate/item'
 import Toast from '../../base/toast'
 import IterationResultPanel from '../run/iteration-result-panel'
 import InputsPanel from './inputs-panel'
+import cn from '@/utils/classnames'
 import Loading from '@/app/components/base/loading'
 import type { NodeTracing } from '@/types/workflow'
 
-const WorkflowPreview = ({
-  onShowIterationDetail,
-}: {
-  onShowIterationDetail: (detail: NodeTracing[][]) => void
-}) => {
+const WorkflowPreview = () => {
   const { t } = useTranslation()
   const { handleCancelDebugAndPreviewPanel } = useWorkflowInteractions()
   const workflowRunningData = useStore(s => s.workflowRunningData)
@@ -70,7 +66,7 @@ const WorkflowPreview = ({
   if (isShowIterationDetail) {
     return (
       <div className={`
-      flex flex-col w-[420px] h-full rounded-l-2xl shadow-xl bg-white
+      flex flex-col w-[420px] h-full rounded-l-2xl border-[0.5px] border-gray-200 shadow-xl bg-white
     `}>
         <IterationResultPanel
           list={iterationRunResult}
@@ -83,7 +79,7 @@ const WorkflowPreview = ({
 
   return (
     <div className={`
-      flex flex-col w-[420px] h-full rounded-l-2xl shadow-xl bg-white
+      flex flex-col w-[420px] h-full rounded-l-2xl border-[0.5px] border-gray-200 shadow-xl bg-white
     `}>
       <div className='flex items-center justify-between p-4 pb-1 text-base font-semibold text-gray-900'>
         {`Test Run${!workflowRunningData?.result.sequence_number ? '' : `#${workflowRunningData?.result.sequence_number}`}`}
@@ -107,7 +103,7 @@ const WorkflowPreview = ({
                   <div
                     className={cn(
                       'mr-6 py-3 border-b-2 border-transparent text-[13px] font-semibold leading-[18px] text-gray-400 cursor-pointer',
-                      currentTab === 'INPUT' && '!border-primary-600 text-gray-700',
+                      currentTab === 'INPUT' && '!border-[rgb(21,94,239)] text-gray-700',
                     )}
                     onClick={() => switchTab('INPUT')}
                   >{t('runLog.input')}</div>
@@ -115,7 +111,7 @@ const WorkflowPreview = ({
                 <div
                   className={cn(
                     'mr-6 py-3 border-b-2 border-transparent text-[13px] font-semibold leading-[18px] text-gray-400 cursor-pointer',
-                    currentTab === 'RESULT' && '!border-primary-600 text-gray-700',
+                    currentTab === 'RESULT' && '!border-[rgb(21,94,239)] text-gray-700',
                     !workflowRunningData && 'opacity-30 !cursor-not-allowed',
                   )}
                   onClick={() => {
@@ -127,7 +123,7 @@ const WorkflowPreview = ({
                 <div
                   className={cn(
                     'mr-6 py-3 border-b-2 border-transparent text-[13px] font-semibold leading-[18px] text-gray-400 cursor-pointer',
-                    currentTab === 'DETAIL' && '!border-primary-600 text-gray-700',
+                    currentTab === 'DETAIL' && '!border-[rgb(21,94,239)] text-gray-700',
                     !workflowRunningData && 'opacity-30 !cursor-not-allowed',
                   )}
                   onClick={() => {
@@ -139,7 +135,7 @@ const WorkflowPreview = ({
                 <div
                   className={cn(
                     'mr-6 py-3 border-b-2 border-transparent text-[13px] font-semibold leading-[18px] text-gray-400 cursor-pointer',
-                    currentTab === 'TRACING' && '!border-primary-600 text-gray-700',
+                    currentTab === 'TRACING' && '!border-[rgb(21,94,239)] text-gray-700',
                     !workflowRunningData && 'opacity-30 !cursor-not-allowed',
                   )}
                   onClick={() => {
