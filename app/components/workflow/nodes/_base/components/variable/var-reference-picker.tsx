@@ -2,15 +2,16 @@
 import type { FC } from 'react'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import cn from 'classnames'
 import {
   RiArrowDownSLine,
   RiCloseLine,
 } from '@remixicon/react'
 import produce from 'immer'
 import { useStoreApi } from 'reactflow'
+import VarReferencePopup from './var-reference-popup'
 import { getNodeInfoById, isENV, isSystemVar } from './utils'
-import { getNodeInfoById, getVarType, isSystemVar, toNodeAvailableVars } from './utils'
+import ConstantField from './constant-field'
+import cn from '@/utils/classnames'
 import type { Node, NodeOutPutVar, ValueSelector, Var } from '@/app/components/workflow/types'
 import { BlockEnum } from '@/app/components/workflow/types'
 import { VarBlockIcon } from '@/app/components/workflow/block-icon'
