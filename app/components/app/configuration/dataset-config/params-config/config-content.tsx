@@ -32,6 +32,7 @@ import type {
  import cn from '@/utils/classnames'
  import { useSelectedDatasetsMode } from '@/app/components/workflow/nodes/knowledge-retrieval/hooks'
  import Switch from '@/app/components/base/switch'
+ import { useGetLanguage } from '@/context/i18n'
 
 type Props = {
   datasetConfigs: DatasetConfigs
@@ -53,6 +54,7 @@ const ConfigContent: FC<Props> = ({
   selectedDatasets = [],
 }) => {
   const { t } = useTranslation()
+  const language = useGetLanguage()
   const type = datasetConfigs.retrieval_model
   const selectedDatasetsMode = useSelectedDatasetsMode(selectedDatasets)
   const setType = (value: RETRIEVE_TYPE) => {
@@ -167,7 +169,13 @@ const ConfigContent: FC<Props> = ({
           title={(
              <div className='flex items-center'>
                {t('appDebug.datasetConfig.retrieveOneWay.title')}
-               <TooltipPlus popupContent={<div className='w-[320px]'>{t('dataset.nTo1RetrievalLegacy')}</div>}>
+               <TooltipPlus
+                  popupContent={(
+                    <div className='w-[320px]'>
+                      {t('dataset.nTo1RetrievalLegacy')}
+                    </div>
+                  )}
+                >
                  <div className='ml-1 flex items-center px-[5px] h-[18px] rounded-[5px] border border-text-accent-secondary system-2xs-medium-uppercase text-text-accent-secondary'>legacy</div>
                </TooltipPlus>
              </div>
