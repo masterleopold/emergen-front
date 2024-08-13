@@ -45,7 +45,7 @@ export default function AccountAbout({
                   ? <Link href={'https://github.com/langgenius/dify/blob/main/LICENSE'} target='_blank' rel='noopener noreferrer'>Open Source License</Link>
                   : <>
                     <Link href='https://vox.delivery/privacy' target='_blank' rel='noopener noreferrer'>Privacy Policy</Link>,
-                    <Link href='https://vox.delivery/privacy' target='_blank' rel='noopener noreferrer'>Terms of Service</Link>
+                    <Link href='https://vox.delivery/privacy' target='_blank' rel='noopener noreferrer'>Privacy Policy</Link>,<span> </span>
                   </>
               }
             </div>

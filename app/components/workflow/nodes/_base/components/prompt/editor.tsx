@@ -9,7 +9,6 @@ import { useTranslation } from 'react-i18next'
 import { useBoolean } from 'ahooks'
 import { BlockEnum, EditionType } from '../../../../types'
 import type {
-  ModelConfig,
   Node,
   NodeOutPutVar,
   Variable,
@@ -60,7 +59,6 @@ type Props = {
   availableNodes?: Node[]
   isSupportPromptGenerator?: boolean
   onGenerated?: (prompt: string) => void
-  modelConfig?: ModelConfig
   // for jinja
   isSupportJinja?: boolean
   editionType?: EditionType
@@ -93,7 +91,6 @@ const Editor: FC<Props> = ({
   varList = [],
   handleAddVariable,
   onGenerated,
-  modelConfig,
 }) => {
   const { t } = useTranslation()
   const { eventEmitter } = useEventEmitterContextContext()
