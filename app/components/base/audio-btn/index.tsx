@@ -63,14 +63,13 @@ const AudioBtn = ({
      else
        url = `/apps/${params.appId}/text-to-audio`
    }
-
   const handleToggle = async () => {
     if (audioState === 'playing' || audioState === 'loading') {
-     setAudioState('paused')
+     setTimeout(() => setAudioState('paused'), 1)
      AudioPlayerManager.getInstance().getAudioPlayer(url, isPublic, id, value, voice, audio_finished_call).pauseAudio()
     }
    else {
-      setAudioState('loading')
+      setTimeout(() => setAudioState('loading'), 1)
       AudioPlayerManager.getInstance().getAudioPlayer(url, isPublic, id, value, voice, audio_finished_call).playAudio()
     }
    }
