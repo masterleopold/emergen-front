@@ -32,7 +32,7 @@ const translation = {
     },
     hybrid_search: {
       title: 'ハイブリッド検索',
-      description: '全文検索とベクトル検索を同時に実行し、ユーザーのクエリに最適なマッチを選択するために再ランク付けを行います。再ランクモデルAPIの設定が必要です。',
+      description: '全文検索とベクトル検索を同時に実行し、ユーザーのクエリに最適なマッチを選択するためにRerank付けを行います。RerankモデルAPIの設定が必要です。',
       recommend: 'おすすめ',
     },
     invertedIndex: {
@@ -44,6 +44,29 @@ const translation = {
   },
   docsFailedNotice: 'ドキュメントのインデックスに失敗しました',
   retry: '再試行',
+  indexingTechnique: {
+     high_quality: '高品質',
+     economy: '経済',
+   },
+   indexingMethod: {
+     semantic_search: 'ベクトル検索',
+     full_text_search: 'フルテキスト検索',
+     hybrid_search: 'ハイブリッド検索',
+   },
+   mixtureHighQualityAndEconomicTip: '高品質なナレッジベースと経済的なナレッジベースを混在させるには、Rerankモデルを構成する必要がある。',
+   inconsistentEmbeddingModelTip: '選択されたナレッジベースが一貫性のない埋め込みモデルで構成されている場合、Rerankモデルの構成が必要です。',
+   retrievalSettings: '設定を回収',
+   rerankSettings: 'Rerank設定',
+   weightedScore: {
+     title: 'ウェイト設定',
+     description: '割り当てられた重みを調整することで、並べ替え戦略はセマンティックマッチングとキーワードマッチングのどちらを優先するかを決定します。',
+     semanticFirst: 'セマンティック優先',
+     keywordFirst: 'キーワード優先',
+     customized: 'カスタマイズ',
+     semantic: 'セマンティクス',
+     keyword: 'キーワード',
+   },
+   nTo1RetrievalLegacy: '製品計画によると、N To 1 Retrievalは9月に正式に廃止される予定です。それまでは通常通り使用できます。',
 }
 
 export default translation

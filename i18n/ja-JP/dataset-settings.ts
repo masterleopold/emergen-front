@@ -12,7 +12,10 @@ const translation = {
     permissions: '権限',
     permissionsOnlyMe: '自分のみ',
     permissionsAllMember: 'すべてのチームメンバー',
+    permissionsInvitedMembers: '一部のチームメンバー',
+     me: '(あなた)',
     indexMethod: 'インデックス方法',
+    
     indexMethodHighQuality: '高品質',
     indexMethodHighQualityTip: 'ユーザーがクエリを実行する際により高い精度を提供するために、Embeddingモデルを呼び出して処理を行う。',
     indexMethodEconomy: '経済的',

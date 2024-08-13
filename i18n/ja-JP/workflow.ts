@@ -134,7 +134,7 @@ const translation = {
       variableValue: '変数値',
       code: 'コード',
       model: 'モデル',
-      rerankModel: '再ランクモデル',
+      rerankModel: 'Rerankモデル',
     },
     invalidVariable: '無効な変数',
   },
