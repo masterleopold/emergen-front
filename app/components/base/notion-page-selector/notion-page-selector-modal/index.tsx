@@ -3,14 +3,14 @@ import { useTranslation } from 'react-i18next'
 import cn from 'classnames'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import NotionPageSelector from '../base'
-import type { NotionPageSelectorValue } from '../base'
 import s from './index.module.css'
+import type { NotionPage } from '@/models/common'
 import Modal from '@/app/components/base/modal'
 
 type NotionPageSelectorModalProps = {
   isShow: boolean
   onClose: () => void
-  onSave: (selectedPages: NotionPageSelectorValue[]) => void
+  onSave: (selectedPages: NotionPage[]) => void
   datasetId: string
 }
 const NotionPageSelectorModal = ({
@@ -20,12 +20,12 @@ const NotionPageSelectorModal = ({
   datasetId,
 }: NotionPageSelectorModalProps) => {
   const { t } = useTranslation()
-  const [selectedPages, setSelectedPages] = useState<NotionPageSelectorValue[]>([])
+  const [selectedPages, setSelectedPages] = useState<NotionPage[]>([])
 
   const handleClose = () => {
     onClose()
   }
-  const handleSelectPage = (newSelectedPages: NotionPageSelectorValue[]) => {
+  const handleSelectPage = (newSelectedPages: NotionPage[]) => {
     setSelectedPages(newSelectedPages)
   }
   const handleSave = () => {
