@@ -89,7 +89,7 @@ export const getSelectedDatasetsMode = (datasets: DataSet[]) => {
      reranking_mode,
      reranking_model,
      weights,
-     reranking_enable,
+     reranking_enable: allEconomic ? reranking_enable : true,
    }
 
    if (allEconomic || mixtureHighQualityAndEconomic || inconsistentEmbeddingModel)
