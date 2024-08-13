@@ -3,6 +3,10 @@ import type { CollectionType } from '@/app/components/tools/types'
 import type { LanguagesSupported } from '@/i18n/language'
 import type { Tag } from '@/app/components/base/tag-management/constant'
 import type {
+   RerankingModeEnum,
+   WeightedScoreEnum,
+ } from '@/models/datasets'
+import type {
   RerankingModeEnum,
   WeightedScoreEnum,
 } from '@/models/datasets'
@@ -408,15 +412,15 @@ export type RetrievalConfig = {
   score_threshold_enabled: boolean
   score_threshold: number
   reranking_mode?: RerankingModeEnum
-  weights?: {
-    weight_type: WeightedScoreEnum
-    vector_setting: {
-      vector_weight: number
-      embedding_provider_name: string
-      embedding_model_name: string
-    }
-    keyword_setting: {
-      keyword_weight: number
-    }
-  }
+   weights?: {
+     weight_type: WeightedScoreEnum
+     vector_setting: {
+       vector_weight: number
+       embedding_provider_name: string
+       embedding_model_name: string
+     }
+     keyword_setting: {
+       keyword_weight: number
+     }
+   }
 }

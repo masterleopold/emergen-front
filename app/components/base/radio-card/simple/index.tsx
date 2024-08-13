@@ -6,7 +6,7 @@ import s from './style.module.css'
 
 type Props = {
   className?: string
-  title: string
+  title: string | JSX.Element | null
   description: string
   isChosen: boolean
   onChosen: () => void
