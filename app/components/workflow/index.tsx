@@ -136,28 +136,29 @@ const Workflow: FC<WorkflowProps> = memo(({
 
   const { eventEmitter } = useEventEmitterContextContext()
 
-  eventEmitter?.useSubscription((v: any) => {
-    if (v.type === WORKFLOW_DATA_UPDATE) {
-      setNodes(v.payload.nodes)
-      setEdges(v.payload.edges)
-
-      if (v.payload.viewport)
-        reactflow.setViewport(v.payload.viewport)
-
-      if (v.payload.features && featuresStore) {
-        const { setFeatures } = featuresStore.getState()
-
-        setFeatures(v.payload.features)
-      }
-
-      if (v.payload.hash)
-        setSyncWorkflowDraftHash(v.payload.hash)
-
-      setTimeout(() => setControlPromptEditorRerenderKey(Date.now()))
-    }
-  })
-  if (v.type === DSL_EXPORT_CHECK)
-  setSecretEnvList(v.payload.data as EnvironmentVariable[])
+ eventEmitter?.useSubscription((v: any) => {
+   if (v.type === WORKFLOW_DATA_UPDATE) {
+     setNodes(v.payload.nodes)
+     setEdges(v.payload.edges)
+ 
+     if (v.payload.viewport)
+       reactflow.setViewport(v.payload.viewport)
+ 
+     if (v.payload.features && featuresStore) {
+       const { setFeatures } = featuresStore.getState()
+ 
+       setFeatures(v.payload.features)
+     }
+ 
+     if (v.payload.hash)
+       setSyncWorkflowDraftHash(v.payload.hash)
+ 
+     setTimeout(() => setControlPromptEditorRerenderKey(Date.now()))
+   }
+ 
+   if (v.type === DSL_EXPORT_CHECK)
+     setSecretEnvList(v.payload.data as EnvironmentVariable[])
+ })
 
   useEffect(() => {
     setAutoFreeze(false)
